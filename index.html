@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Chatbot</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="info-panel">
+            <h1><i class="fas fa-graduation-cap"></i> College Admission Assistant</h1>
+            <p>Welcome to our College Admission Chatbot! I'm here to help you with all your questions about the admission process, courses, requirements, deadlines, and more.</p>
+            <p>Feel free to ask me anything about:</p>
+            <ul style="margin-left: 20px; color: #666; line-height: 1.8;">
+                <li>Application procedures</li>
+                <li>Required documents</li>
+                <li>Important deadlines</li>
+                <li>Available courses</li>
+                <li>Scholarship opportunities</li>
+                <li>Campus facilities</li>
+                <li>Tuition and fees</li>
+                <li>Housing options</li>
+                <li>International student info</li>
+                <li>Career services</li>
+            </ul>
+            
+            <div class="quick-links">
+                <h3>Quick Resources</h3>
+                <div class="link-item" onclick="showInfo('application')">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Application Process</span>
+                </div>
+                <div class="link-item" onclick="showInfo('deadlines')">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Important Dates</span>
+                </div>
+                <div class="link-item" onclick="showInfo('courses')">
+                    <i class="fas fa-book"></i>
+                    <span>Available Courses</span>
+                </div>
+                <div class="link-item" onclick="showInfo('scholarships')">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Scholarships</span>
+                </div>
+                <div class="link-item" onclick="showInfo('tuition')">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Tuition & Fees</span>
+                </div>
+                <div class="link-item" onclick="showInfo('housing')">
+                    <i class="fas fa-home"></i>
+                    <span>Housing</span>
+                </div>
+                <div class="link-item" onclick="showInfo('international')">
+                    <i class="fas fa-globe"></i>
+                    <span>International Students</span>
+                </div>
+                <div class="link-item" onclick="showInfo('contact')">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact Admissions</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbot-container">
+            <div class="chat-header">
+                <div class="bot-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="bot-info">
+                    <h3>Admission Assistant</h3>
+                    <p>Online - Ready to help</p>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div>
+                        <span>Active now</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        Hello! 👋 I'm your College Admission Assistant. I can help you with applications, deadlines, courses, scholarships, housing, and more. What would you like to know?
+                    </div>
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+
+            <div class="quick-replies">
+                <div class="quick-reply" onclick="sendQuickReply('How do I apply?')">How do I apply?</div>
+                <div class="quick-reply" onclick="sendQuickReply('What are the deadlines?')">Deadlines</div>
+                <div class="quick-reply" onclick="sendQuickReply('Available courses')">Courses</div>
+                <div class="quick-reply" onclick="sendQuickReply('Tuition costs')">Tuition</div>
+                <div class="quick-reply" onclick="sendQuickReply('Scholarships')">Scholarships</div>
+                <div class="quick-reply" onclick="sendQuickReply('Housing options')">Housing</div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" class="input-field" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+                <button class="send-btn" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
